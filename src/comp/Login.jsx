@@ -16,7 +16,7 @@ export default function Login() {
             type="text"
        
           />
-          <label>Instructor Name</label>
+          <label>User Name</label>
         </div>
         <div className="user-box">
           <input required="" type="password" />

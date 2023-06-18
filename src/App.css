@@ -4,7 +4,9 @@
     rgb(11, 44, 58),
     rgb(26, 56, 80),
     rgba(8, 41, 44, 0.77)
+    
   );
+  
 }
 .navbar{ 
   background-color: rgba(0, 0, 0, 0.4);
@@ -14,15 +16,15 @@
 .login-box {
 
   height: 60%;
-  width: 500px;
-  padding: 40px;
+  width: 600px;
+  padding: 30px;
 
 
-  background: #0C0E14;
+  background: rgba(0, 0, 0, 0.6);
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
  
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
 
@@ -31,7 +33,7 @@
   padding: 0;
   color: #fff;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
   letter-spacing: 1px;
 }
@@ -68,7 +70,7 @@
   top: -20px;
   left: 0;
   color: #fff;
-  font-size: 12px;
+  font-size: 15px;
 }
 .button1 {
   display: inline-block;
@@ -203,14 +205,17 @@
  
 }
 th{
-  background-color: #0C0E14;
+  background-color: #0c0e1485;
   color: white;
 }
 th,td{
 
-padding: 30px;
+padding: 25px;
 border-bottom: 2px solid black;
 text-align: center;
+font-family: 'Readex Pro Variable';
+font-size: 18px;
+
 
 
 }
@@ -221,9 +226,7 @@ text-align: center;
 .positive-change {
   color: #04A56D;
 }
-.hover-row td:hover {
-  background-color: rgba(0, 0, 0, 0.236);
-}
+
 
  .crypto-icon{
 width: 10%;
@@ -236,3 +239,16 @@ margin-right: 15px;
   justify-content: center;
   align-items: center;
  }
+ .trade-div { 
+
+  border-radius: 20px;
+ }
+ .header { 
+  background-color: #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to right, #40A8E1, #AEA0E4,#F6CDAE);
+}
+.crypto-row:hover {
+  background-color: #0c0e1485;
+}

@@ -12,11 +12,15 @@
   "dependencies": {
     "@chakra-ui/react": "^2.7.0",
     "@fontsource-variable/outfit": "^5.0.3",
+    "@fontsource-variable/readex-pro": "^5.0.3",
     "@fontsource/crete-round": "^5.0.3",
     "@fontsource/viga": "^5.0.3",
+    "axios": "^1.4.0",
+    "ethers": "^5.7.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.9.0"
+    "react-icons": "^4.9.0",
+    "web3": "^1.10.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",

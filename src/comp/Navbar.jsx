@@ -9,19 +9,19 @@ import {FaEthereum} from 'react-icons/fa' ;
 export default function Navbar() {
   return (
     <div>
-      <div className=" p-4  d-flex justify-content-between navbar navbar-expand-lg navbar-dark navbar">
+      <div className=" p-3 d-flex justify-content-between navbar navbar-expand-lg navbar-dark navbar">
        
-       <div className='d-flex'>
-        <FaEthereum color={'#FAEF88'} size={40} />
-        <Link   to='/home' className='link' >
-        <Text   as={'h1'} fontSize={'4xl'} fontFamily={'Viga'}> CryptoNet </Text>
+       <div className='d-flex ' style={{margin:'0px 10rem'}}>
+        <FaEthereum color={'#FAEF88'} size={30}  />
+        <Link   to='/' className='link' >
+        <Text   as={'h1'} fontSize={'2xl'} fontFamily={'Viga'}  borderLeft={'1px solid white'} > CryptoNet </Text>
         </Link>
         
         </div> 
      
 
     
-<div>
+<div style={{margin:'0px 10rem'}} >
 
   <a
           className="btn text-white  m2 my-sm-0"

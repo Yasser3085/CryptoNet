@@ -10,6 +10,8 @@ import Home from './comp/Home'
 import SignUp from './comp/SignUp';
 import Login from './comp/Login';
 import Markets from './comp/Markets';
+import Footer from './comp/Footer';
+import TradePage from './comp/TradePage';
 function App() {
  
 
@@ -26,6 +28,7 @@ function App() {
 <Route path='/signup' element={<SignUp/>} />
 <Route path='/login' element={<Login/>} />
 <Route path='/markets' element={<Markets/>} />
+<Route path='/trade' element={<TradePage/>} />
 
 
 
@@ -34,7 +37,7 @@ function App() {
 
 
 </Routes>
-
+<Footer/>
 
     </>
   )
