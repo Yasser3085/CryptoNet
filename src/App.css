@@ -1,15 +1,15 @@
 .parent { 
   background: linear-gradient(
     -45deg,
-    rgb(11, 44, 58),
-    rgb(26, 56, 80),
-    rgba(8, 41, 44, 0.77)
+    rgb(17, 58, 76),
+    rgb(57, 102, 139),
+    rgba(15, 68, 72, 0.77)
     
   );
   
 }
 .navbar{ 
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color:rgb(17, 58, 76),;
  
 }
 
@@ -250,5 +250,6 @@ margin-right: 15px;
   background-image: linear-gradient(to right, #40A8E1, #AEA0E4,#F6CDAE);
 }
 .crypto-row:hover {
-  background-color: #0c0e1485;
+  background-color: #0c0e143a;
 }
+

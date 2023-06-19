@@ -6,7 +6,7 @@ function Transactions() {
 
   useEffect(() => {
     const apiKey = '17USV69F2SB1R3JIFBVGK3J82M5MXF7QHG';
-    const address = '0x081be79540add67ead9c9dbd57e93a110dce5b9f';
+    const address = '0xC553F48286bbEa6753C58EE779ba344f7796A9E3';
 
     const apiUrl = `https://api.etherscan.io/api?module=account&action=txlist&address=${address}&apikey=${apiKey}`;
 
@@ -31,7 +31,7 @@ function Transactions() {
 
   const formatAddress = (address) => {
     if (address.length <= 10) {
-      return address; // If the address is already 10 characters or less, return as is
+      return address;
     } else {
       const firstFive = address.slice(0, 5);
       const lastFive = address.slice(-5);
@@ -41,7 +41,7 @@ function Transactions() {
 
   const formatTransactionHash = (hash) => {
     if (hash.length <= 10) {
-      return hash; // If the hash is already 10 characters or less, return as is
+      return hash; 
     } else {
       const firstFive = hash.slice(0, 5);
       const lastFive = hash.slice(-5);
