@@ -1,28 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import { ethers } from 'ethers';
-
-function Transactions() {
+import { FaEthereum } from 'react-icons/fa';
+import '../App.css';
+function Transactions(props) {
   const [transactions, setTransactions] = useState([]);
 
   useEffect(() => {
     const apiKey = '17USV69F2SB1R3JIFBVGK3J82M5MXF7QHG';
-    const address = '0xC553F48286bbEa6753C58EE779ba344f7796A9E3';
+    const address = props.connectedAddress;
 
-    const apiUrl = `https://api.etherscan.io/api?module=account&action=txlist&address=${address}&apikey=${apiKey}`;
+    if (address) {
+      const apiUrl = `https://api.etherscan.io/api?module=account&action=txlist&address=${address}&apikey=${apiKey}`;
 
-    fetch(apiUrl)
-      .then(response => response.json())
-      .then(data => {
-        if (data.status === '1') {
-          setTransactions(data.result);
-        } else {
-          console.error('Error fetching transactions:', data.message);
-        }
-      })
-      .catch(error => {
-        console.error('Error fetching transactions:', error);
-      });
-  }, []);
+      fetch(apiUrl)
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.status === '1') {
+            setTransactions(data.result);
+          } else {
+            console.error('Error fetching transactions:', data.message);
+          }
+        })
+        .catch((error) => {
+          console.error('Error fetching transactions:', error);
+        });
+    }
+  }, [props.connectedAddress]);
 
   const formatValue = (value) => {
     const etherValue = ethers.utils.formatUnits(value, 'ether');
@@ -41,7 +44,7 @@ function Transactions() {
 
   const formatTransactionHash = (hash) => {
     if (hash.length <= 10) {
-      return hash; 
+      return hash;
     } else {
       const firstFive = hash.slice(0, 5);
       const lastFive = hash.slice(-5);
@@ -49,16 +52,26 @@ function Transactions() {
     }
   };
 
+  const formatDate = (timestamp) => {
+    const date = new Date(timestamp * 1000);
+    return date.toDateString();
+  };
+
   return (
-    <div>
-      <h2>Latest Transactions</h2>
-      <div className="transaction-cards">
-        {transactions.map(transaction => (
-          <div key={transaction.hash} className="transaction-card mt-5">
-            <h4>Transaction Hash: {formatTransactionHash(transaction.hash)}</h4>
-            <p>From: {formatAddress(transaction.from)}</p>
-            <p>To: {formatAddress(transaction.to)}</p>
-            <p>Value: {formatValue(transaction.value)} ETH</p>
+    <div className="container sub-wallet gap-5 w-100" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '5rem' }}>
+      <div className="transaction-container ">
+        {transactions.map((transaction, index) => (
+          <div className="box sub-wallet d-flex justify-content-center" key={transaction.hash}>
+            <span className="title my-5">{`${index + 1}${index === 0 ? 'st' : index === 1 ? 'nd' : index === 2 ? 'rd' : 'th'} Transaction`}</span>
+            <div>
+              <strong>Transaction Hash: {formatTransactionHash(transaction.hash)}</strong>
+              <strong>From: {formatAddress(transaction.from)}</strong>
+              <strong>To: {formatAddress(transaction.to)}</strong>
+              <strong>Date: {formatDate(transaction.timeStamp)}</strong>
+              <strong style={{ display: 'flex', alignItems: 'center' }}>
+                Value: {formatValue(transaction.value)} ETH <FaEthereum />
+              </strong>
+            </div>
           </div>
         ))}
       </div>

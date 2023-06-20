@@ -7,14 +7,16 @@ import { FaEthereum } from 'react-icons/fa';
 import {FiLogOut}from 'react-icons/fi';
 import '@fontsource-variable/readex-pro';
 import { color } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState('');
-
+  const navigate = useNavigate();
   useEffect(() => {
     const token = localStorage.getItem('token');
+    
 
     if (token) {
       setIsLoggedIn(true);
@@ -28,6 +30,7 @@ export default function Navbar() {
     localStorage.removeItem('username');
     setIsLoggedIn(false);
     setUsername('');
+    navigate('/');
   };
 
   return (
@@ -44,10 +47,10 @@ export default function Navbar() {
     <div className="d-flex w-100 align-items-center justify-content-between  " style={{ margin: '0px 5rem' }}>
       {isLoggedIn && (
         <>
-        <div style={{marginLeft:'15rem'}}>    <a className="btn text-white fs-5 m-2 my-sm-0" href="/trade" type="submit">
+        <div style={{marginLeft:'15rem'}}>    <a  style={{fontFamily:'Readex Pro Variable'} } className="btn text-white fs-5 m-2 my-sm-0" href="/trade" type="submit">
             Trade
           </a>
-          <a className="btn text-white m-2 fs-5  my-sm-0" href="/markets" type="submit">
+          <a style={{fontFamily:'Readex Pro Variable'} } className="btn text-white m-2 fs-5 fw-5 my-sm-0" href="/markets" type="submit">
             Markets
           </a></div>
       
@@ -74,7 +77,7 @@ export default function Navbar() {
               </Button>
             </Link>
             <Link to="/signup">
-              <Button as={'a'} colorScheme="yellow" _hover={{ textColor: 'black' }}>
+              <Button as={'a'} colorScheme="yellow"  className='rounded-pill signup'  _hover={{ textColor: 'black' }}>
                 Sign Up
               </Button>
             </Link>

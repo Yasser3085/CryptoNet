@@ -1,16 +1,5 @@
-.parent { 
-  background: linear-gradient(
-    -45deg,
-    rgb(17, 58, 76),
-    rgb(57, 102, 139),
-    rgba(15, 68, 72, 0.77)
-    
-  );
-  
-}
-.navbar{ 
-  background-color:rgb(17, 58, 76),;
- 
+.navbar { 
+  background: rgba(0, 0, 0, 0.211);
 }
 
 .login-box {
@@ -29,7 +18,7 @@
 }
 
 .login-box p:first-child {
-  margin: 0 0 30px;
+  margin: 0 0 ;
   padding: 0;
   color: #fff;
   text-align: center;
@@ -197,7 +186,7 @@
 
 .login-box p:last-child {
   color: #aaa;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .link:hover { 
@@ -253,3 +242,50 @@ margin-right: 15px;
   background-color: #0c0e143a;
 }
 
+#root { 
+
+  background-image:url('../public/images/Screenshot\ 2023-06-19\ at\ 11.48.28\ PM.png');
+background-size: cover;
+
+background-attachment: fixed;
+
+}
+
+  
+.btn:hover { 
+  transform: scale(1.05);
+  
+}
+html { 
+  width: auto;
+}
+
+.rounded-10 {
+  border-radius: 10px;
+}
+
+.table-divs div { 
+
+height: 10rem;
+width: 15rem;
+border : 1px solid black;
+
+}
+.market-title{
+  background-color: #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to right, #cddee7, #b2b7cb,#cec4c4,#cddee7);
+}
+.goals-div{
+  background-color: #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to right, #8dd2f7, #c1ccf9,#b9e6ff,#acd8ef);
+}
+.transaction-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 100px;
+}

@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../App.css';
-import { Box } from '@chakra-ui/react';
+import { Box, Button, Center, Text } from '@chakra-ui/react';
 import axios from 'axios';
+import { FcGoogle } from 'react-icons/fc';
 
 export default function SignUp() {
+  const navigate = useNavigate(); // Initialize useNavigate hook
+
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  
+
   const handleRegistration = async (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
 
     try {
       const response = await axios.post('http://localhost:9000/register/user', {
@@ -19,10 +23,10 @@ export default function SignUp() {
       });
 
       console.log(response.data); // The response from the backend
+      navigate('/login'); // Redirect to '/login' after successful registration
 
     } catch (error) {
       console.error(error.response.data); // Error message from the backend
-      
     }
   };
 
@@ -68,6 +72,12 @@ export default function SignUp() {
         <p>
           have an account? <a href="/login" className="a2 text-white">Login</a>
         </p>
+
+        <Button w={'full'} variant={'outline'} leftIcon={<FcGoogle />}>
+          <Center className='hello' display={'flex'} alignItems={'center'}>
+            <Text>Sign Up with Google</Text>
+          </Center>
+        </Button>
       </div>
     </div>
   );

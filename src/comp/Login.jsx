@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../App.css';
-
-import { Box } from '@chakra-ui/react';
+import { FcGoogle } from 'react-icons/fc';
+import { Box,Button,Center,Text } from '@chakra-ui/react';
 import axios from 'axios';
 
 export default function Login() {
+  
   const navigate = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -21,16 +22,18 @@ export default function Login() {
         password
       });
 
-      console.log(response.data); 
+      console.log(response.data); // Token received from the backend upon successful login
 
-
+      // Do something after successful login, e.g., store the token in local storage or redirect to another page
       if (response.data.token) {
         // Store the token in local storage
         localStorage.setItem('token', response.data.token);
         localStorage.setItem('username', username);
+        localStorage.setItem('isLoggedIn', 'true');
 
-        setIsLoggedIn(true);
-        navigate('/home');
+        setIsLoggedIn(true); // Update the isLoggedIn stat
+     
+        navigate('/trade');
       } else {
         setErrorMessage(response.data.message);
       }
@@ -42,10 +45,10 @@ export default function Login() {
   };
 
   // Check if the user is already logged in
-  
+  // If the token exists in local storage, redirect to the home page
   const token = localStorage.getItem('token');
   if (token) {
-    navigate('/home');
+    navigate('/trade');
   }
 
   return (
@@ -78,6 +81,11 @@ export default function Login() {
         {errorMessage && <p className="error-message"> <h5 className='text-danger'>{errorMessage}</h5></p>}
         <p>
           Don't have an account? <a href="/signup" className="a2 text-white">Register</a>
+          <Button mt={10} w={'full'} variant={'outline'} leftIcon={<FcGoogle />}>
+          <Center className='hello' display={'flex'} alignItems={'center'}>
+            <Text  >Sign in with Google</Text>
+          </Center>
+        </Button>
         </p>
       </div>
     </div>

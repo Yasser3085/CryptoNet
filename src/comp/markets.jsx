@@ -60,15 +60,15 @@ function Markets() {
   }, []);
 
   return (
-    <Flex h={'100%'} className='parent' justifyContent={'center'} alignItems={'center'} direction={'column'}>
+    <Flex  className='parent' justifyContent={'center'} alignItems={'center'} direction={'column'}>
       {!dataLoaded ? (
        <div className='vh-100 d-flex jusify-content-center align-items-center'><p style={{fontSize:'30px',fontFamily:'Readex Pro Variable'}}>Loading...</p> </div>
       ) : (
         <>
          
           <div style={{ margin: '3rem 20rem 3rem 20rem ', alignSelf: 'flex-start' }}>
-            <h1 style={{fontFamily:'viga'}}>Markets Overview</h1>
-            <h6 style={{fontFamily:'viga',fontWeight:'light'}}>All Price information is in USD</h6>
+            <h1 className='market-title' style={{fontFamily:'Readex Pro Variable' ,fontSize:'3rem'}}>Markets Overview</h1>
+            <h6 style={{fontFamily:'Readex Pro Variable',fontWeight:'light'}}>All Price information is in USD</h6>
           </div>
           <table>
             <thead>

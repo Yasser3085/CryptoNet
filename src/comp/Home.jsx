@@ -3,11 +3,12 @@ import Navbar from './Navbar';
 import { Container, Row, Col } from 'react-bootstrap';
 import '@fontsource/crete-round';
 import '@fontsource/viga';
+import '@fontsource-variable/readex-pro';
 export default function Home() {
   return (
     <>
-      <div className='parent vh-100'>
-        <div className='mx-5' style={{ fontFamily: 'viga'  }}>
+      <div className='parent h-100'>
+        <div className='mx-5' style={{ fontFamily: 'Readex variable pro '  }}>
           <Row>
             <Col>
               <h1 className="text-center mt-5">Welcome to CryptoNet</h1>
