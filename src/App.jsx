@@ -10,7 +10,7 @@ import Home from './comp/Home'
 import SignUp from './comp/SignUp';
 import Login from './comp/Login';
 import Markets from './comp/markets';
-import Footer from './comp/Footer';
+import Footer from './comp/footer';
 import TradePage from './comp/TradePage';
 import TransactionDetails from './comp/TransactionDetails';
 import Admin from './comp/Admin';
