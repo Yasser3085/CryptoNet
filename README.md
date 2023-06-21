@@ -5,7 +5,9 @@
 
 <body>
   <h1>CryptNet Website</h1>
-
+  
+<p>Welcome to the CryptNet website! This project aims to provide a user-friendly platform Those interested in digital currencies to manage their accounts and stay updated with the latest market trends. The website consists of several key pages, including the Get Started page, Trade page, and Market page.</p>
+  
   <h2>Table of Contents</h2>
   <ul>
     <li><a href="#features">Features</a></li>
