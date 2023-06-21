@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <title>Cryptocurrency Website</title>
-</head>
+
 
 <body>
-  <h1>Cryptocurrency Website</h1>
+  <h1>CryptNet Website</h1>
 
   <h2>Table of Contents</h2>
   <ul>
