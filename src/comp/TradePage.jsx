@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { ethers } from 'ethers';
-import { Flex, Button } from '@chakra-ui/react';
+import { Box, Flex, Button } from '@chakra-ui/react';
 import Transactions from './Transactions';
 import '../payment.css';
 import '../card.css';
 import '@fontsource-variable/readex-pro';
 import '../App.css';
+import Swal from 'sweetalert2';
 
 export default function TradePage() {
   const [addressTo, setAddressTo] = useState('');
@@ -70,12 +71,26 @@ export default function TradePage() {
 
   return (
     <>
-      <div className="container d-flex justify-content-center align-items-center w-50" style={{ marginTop: '5rem', fontSize: '3.5rem', flexDirection: 'column', fontFamily: 'Readex Pro Variable' }}>
+      <Box
+        className="container d-flex justify-content-center align-items-center w-50"
+        marginTop={['2rem', '5rem']}
+        fontSize={['2rem', '3.5rem']}
+        flexDirection="column"
+        fontFamily="Readex Pro Variable"
+      >
         <p className="title">Send crypto across the world</p>
         <p style={{ fontSize: '1.5rem' }}>Explore the exciting world of cryptocurrencies and participate in the future of finance with CryptoNet</p>
-      </div>
-      <div style={{ height: '40rem', width: '100%', padding: '20rem' }} className="d-flex parent-div justify-content-between align-items-center">
-        <div>
+      </Box>
+      <Flex
+        height={['auto', '40rem']}
+        width="100%"
+        padding={['2rem', '20rem']}
+        justifyContent="space-between"
+        alignItems="center"
+        flexDirection={['column', 'row']}
+        className="parent-div"
+      >
+        <Box marginBottom={['2rem', 0]}>
           <div className="container main-wallet">
             <div className="box d-flex justify-content-center">
               <span className="title my-5">YOUR WALLET</span>
@@ -83,15 +98,15 @@ export default function TradePage() {
                 <strong>
                   {connectedAddress ? `${connectedAddress.slice(0, 6)}......${connectedAddress.slice(-9)}` : 'Not connected'}
                 </strong>
-                <Flex alignItems={'center'}>
+                <Flex alignItems="center">
                   <p>Address Connected</p>
                   {connectedAddress && <span className="dot" />}
                 </Flex>
               </div>
             </div>
           </div>
-        </div>
-        <div className="modal1">
+        </Box>
+        <Box className="modal1">
           <form className="form" onSubmit={handleSubmit}>
             <div className="payment--options">
               {connectedAddress ? (
@@ -147,26 +162,38 @@ export default function TradePage() {
                 </div>
               </div>
             </div>
-            <button className="purchase--btn" type="submit">
+            <button
+              onClick={() => {
+                Swal.fire('Success', 'Transaction Confirmed', 'success');
+              }}
+              className="purchase--btn"
+              type="submit"
+            >
               Checkout
             </button>
           </form>
-        </div>
-      </div>
+        </Box>
+      </Flex>
       {connectedAddress && (
         <>
-        <div className="d-flex justify-content-center align-items-center" style={{ marginTop: '5rem', fontSize: '3rem', fontFamily: 'Readex Pro Variable' }}>
-  <div className="line mx-5" style={{ flex: 1 }}>
-    <hr />
-  </div>
-  <span style={{ margin: '0 1rem' }}>Latest Transactions</span>
-  <div className="line mx-5" style={{ flex: 3 }}>
-    <hr />
-  </div>
-</div>
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'row', height: '100%', margin: '5rem' }}>
+          <Flex
+            justifyContent="center"
+            alignItems="center"
+            marginTop={['2rem', '5rem']}
+            fontSize="3rem"
+            fontFamily="Readex Pro Variable"
+          >
+            <Box className="line mx-5" flex={1}>
+              <hr />
+            </Box>
+            <span style={{ margin: '0 1rem' }}>Latest Transactions</span>
+            <Box className="line mx-5" flex={3}>
+              <hr />
+            </Box>
+          </Flex>
+          <Flex justifyContent="center" alignItems="center" flexDirection="row" height="100%" margin="5rem">
             <Transactions connectedAddress={connectedAddress} />
-          </div>
+          </Flex>
         </>
       )}
     </>

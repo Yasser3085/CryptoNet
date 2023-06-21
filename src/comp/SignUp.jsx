@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../App.css';
-import { Box, Button, Center, Text } from '@chakra-ui/react';
+import { Box, Button, Center, Text , Flex  } from '@chakra-ui/react';
 import axios from 'axios';
 import { FcGoogle } from 'react-icons/fc';
 
@@ -62,6 +62,7 @@ export default function SignUp() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+           
             />
             <label>Password</label>
           </div>
@@ -73,11 +74,14 @@ export default function SignUp() {
           have an account? <a href="/login" className="a2 text-white">Login</a>
         </p>
 
-        <Button w={'full'} variant={'outline'} leftIcon={<FcGoogle />}>
+        <Flex justifyContent={'center'}>
+              <Button bgColor={'white'}  w={'60%'} borderRadius={'10px'} boxShadow={'0px 0px 1px  black'} leftIcon={<FcGoogle size={'25'} />}>
           <Center className='hello' display={'flex'} alignItems={'center'}>
-            <Text>Sign Up with Google</Text>
+            <Text Color='white'  >Sign up with Google</Text>
           </Center>
         </Button>
+          </Flex>
+       
       </div>
     </div>
   );

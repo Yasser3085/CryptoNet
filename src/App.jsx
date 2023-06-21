@@ -12,6 +12,8 @@ import Login from './comp/Login';
 import Markets from './comp/Markets';
 import Footer from './comp/Footer';
 import TradePage from './comp/TradePage';
+import TransactionDetails from './comp/TransactionDetails';
+import Admin from './comp/Admin';
 function App() {
  
 
@@ -29,6 +31,8 @@ function App() {
 <Route path='/login' element={<Login/>} />
 <Route path='/markets' element={<Markets/>} />
 <Route path='/trade' element={<TradePage/>} />
+<Route path='/transaction/:hash' element={<TransactionDetails/>}/>
+<Route path='/admin' element={<Admin/>}></Route>
 
 
 

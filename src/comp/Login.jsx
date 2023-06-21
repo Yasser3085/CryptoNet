@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../App.css';
 import { FcGoogle } from 'react-icons/fc';
-import { Box,Button,Center,Text } from '@chakra-ui/react';
+import {BsGithub} from 'react-icons/bs';
+import { Box,Button,Center,Text,Flex ,Heading} from '@chakra-ui/react';
 import axios from 'axios';
 
 export default function Login() {
@@ -80,12 +81,17 @@ export default function Login() {
         </form>
         {errorMessage && <p className="error-message"> <h5 className='text-danger'>{errorMessage}</h5></p>}
         <p>
-          Don't have an account? <a href="/signup" className="a2 text-white">Register</a>
-          <Button mt={10} w={'full'} variant={'outline'} leftIcon={<FcGoogle />}>
+          Don't have an account? <a href="/signup" className="a2 text-secondary">Register</a>
+
+          <Flex justifyContent={'center'}>
+              <Button bgColor={'white'} mt={10} w={'60%'} borderRadius={'10px'} boxShadow={'0px 0px 1px  black'} leftIcon={<FcGoogle size={'25'} />}>
           <Center className='hello' display={'flex'} alignItems={'center'}>
-            <Text  >Sign in with Google</Text>
+            <Text Color='white'  >Sign in with Google</Text>
           </Center>
         </Button>
+          </Flex>
+
+        
         </p>
       </div>
     </div>
