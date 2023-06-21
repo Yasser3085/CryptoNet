@@ -13,6 +13,7 @@ import { Link } from "react-router-dom";
 import { FaEthereum } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
+import { color } from "framer-motion";
 
 export default function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -118,6 +119,7 @@ export default function Navbar() {
                   <Button
                     as="a"
                     colorScheme="yellow"
+                   _hover={{color:'black' , transform: "scale(1.1)"}}
                     className="rounded-pill ms-3"
                   >
                     Sign Up

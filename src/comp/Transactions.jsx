@@ -60,7 +60,7 @@ function Transactions(props) {
   return (
     <div className="container sub-wallet gap-5 w-100" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '5rem' }}>
       <div className="transaction-container ">
-        {transactions.map((transaction, index) => (
+      {transactions.slice().reverse().map((transaction, index) => (
           <div className="box sub-wallet d-flex justify-content-center" key={transaction.hash}>
             <span className="title my-5">{`${index + 1}${index === 0 ? 'st' : index === 1 ? 'nd' : index === 2 ? 'rd' : 'th'} Transaction`}</span>
             <div>
