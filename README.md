@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html>
 
-
-
 <body>
-  <h1>CryptNet Website</h1>
-  
-<p>Welcome to the CryptNet website! This project aims to provide a user-friendly platform Those interested in digital currencies to manage their accounts and stay updated with the latest market trends. The website consists of several key pages, including the Get Started page, Trade page, and Market page.</p>
-  
+  <h1>CryptoNet Website</h1>
+
+  <p>Welcome to the CryptoNet website! This project aims to provide a user-friendly platform for those interested in digital currencies to manage their accounts and stay updated with the latest market trends. The website consists of several key pages, including the Get Started page, Trade page, and Market page.</p>
+
   <h2>Table of Contents</h2>
   <ul>
     <li><a href="#features">Features</a></li>
@@ -15,26 +13,34 @@
     <li><a href="#usage">Usage</a></li>
     <li><a href="#dependencies">Dependencies</a></li>
     <li><a href="#contributing">Contributing</a></li>
-
   </ul>
 
   <h2 id="features">Features</h2>
 
   <h3>Get Started Page</h3>
   <ul>
-    <li>Allows users to register and login to their accounts.</li>
+    <li>Introduction and Setup Guide to Get Started Quickly and Easily.</li>
+    <br>
+    <img src="./public/images/1.png">
   </ul>
 
   <h3>Trade Page</h3>
   <ul>
     <li>Users can connect their MetaMask wallet to their account.</li>
     <li>Transfer Ethereum currency to other addresses.</li>
+    <br>
+    <img src="./public/images/3.png">
+    <br>
     <li>Latest transactions are displayed at the bottom of the page.</li>
+    <br>
+    <img src="./public/images/4.png">
   </ul>
 
   <h3>Market Page</h3>
   <ul>
     <li>Displays the price, market cap, and 24h price change of cryptocurrencies in a table format.</li>
+    <br>
+    <img src="./public/images/5.png">
   </ul>
 
   <h2 id="installation">Installation</h2>
@@ -60,27 +66,22 @@
   <pre><code>npm install
   </code></pre>
 
-  <h2 id="usage">Usage</h2>
-
-  <ol>
+  <ol start="4">
     <li>Start the development server:</li>
   </ol>
 
-  <pre><code>npm start
+  <pre><code>npm run dev
   </code></pre>
-
-  <p>Open your web browser and visit <a href="http://localhost:3000">http://localhost:3000</a> to access the website.</p>
 
   <h2 id="dependencies">Dependencies</h2>
 
   <p>The project relies on the following dependencies:</p>
 
   <ul>
-    <li>React: JavaScript library for building user interfaces.</li>
-    <li>ethers: Library for interacting with Ethereum.</li>
-    <li>@chakra-ui/react: UI component library for React.</li>
-    <li>@fontsource-variable/readex-pro: Variable font for custom typography.</li>
-    <li>sweetalert2: Library for displaying alert messages.</li>
+    <li>REACT: JavaScript library for building user interfaces.</li>
+    <li>ETHER.JS: Library for interacting with Ethereum.</li>
+    <li>CHAKRA UI: UI component library for React.</li>
+    <li>Node.js: JavaScript runtime for building server-side applications.</li>
   </ul>
 
   <p>For detailed versions of the dependencies, please refer to the <code>package.json</code> file.</p>
@@ -88,10 +89,6 @@
   <h2 id="contributing">Contributing</h2>
 
   <p>Contributions to this project are welcome! If you encounter any issues or have suggestions for improvements, please open an issue or submit a pull request.</p>
-
-
-
-
 </body>
 
 </html>
