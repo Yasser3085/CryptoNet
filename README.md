@@ -73,6 +73,7 @@
   <pre><code>npm run dev
   </code></pre>
 
+<span> or you can visit the website by this url https://cryptnet.netlify.app/ </span>
   <h2 id="dependencies">Dependencies</h2>
 
   <p>The project relies on the following dependencies:</p>
