@@ -13,7 +13,7 @@
     <li><a href="#usage">Usage</a></li>
     <li><a href="#dependencies">Dependencies</a></li>
     <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
+
   </ul>
 
   <h2 id="features">Features</h2>
@@ -41,14 +41,14 @@
     <li>Clone the repository:</li>
   </ol>
 
-  <pre><code>git clone https://github.com/your-username/cryptocurrency-website.git
+  <pre><code>git clone https://github.com/Yasser3085/CryptoNet-client.git
   </code></pre>
 
   <ol start="2">
     <li>Navigate to the project directory:</li>
   </ol>
 
-  <pre><code>cd cryptocurrency-website
+  <pre><code>cd cryptoNet-client
   </code></pre>
 
   <ol start="3">
@@ -87,9 +87,9 @@
 
   <p>Contributions to this project are welcome! If you encounter any issues or have suggestions for improvements, please open an issue or submit a pull request.</p>
 
-  <h2 id="license">License</h2>
 
-  <p>This project is licensed under the <a href="LICENSE">MIT License</a>.</p>
+
+
 </body>
 
 </html>
