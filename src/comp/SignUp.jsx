@@ -81,7 +81,7 @@ export default function SignUp() {
           </Center>
         </Button>
           </Flex>
-       
+      
       </div>
     </div>
   );

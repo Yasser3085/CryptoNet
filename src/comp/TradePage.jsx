@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ethers } from "ethers";
 import { Box, Flex, Button } from "@chakra-ui/react";
 import Transactions from "./Transactions";
@@ -7,12 +7,44 @@ import "../card.css";
 import "@fontsource-variable/readex-pro";
 import "../App.css";
 import Swal from "sweetalert2";
-
+const ETHER_TO_RIYALS_RATE = 70;
 export default function TradePage() {
   const [addressTo, setAddressTo] = useState("");
   const [amount, setAmount] = useState("");
   const [message, setMessage] = useState("");
   const [connectedAddress, setConnectedAddress] = useState("");
+  const [accountBalance, setAccountBalance] = useState("");
+  const [balanceInRiyals, setBalanceInRiyals] = useState("");
+
+  useEffect(() => {
+    fetchAccountBalance();
+  }, [connectedAddress]);
+
+  const fetchAccountBalance = async () => {
+    if (connectedAddress) {
+      try {
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const balance = await provider.getBalance(connectedAddress);
+        const balanceInEther = ethers.utils.formatEther(balance);
+        calculateBalanceInRiyals(balance.toString());
+        setAccountBalance(balanceInEther);
+      } catch (error) {
+        console.error("Error fetching account balance:", error);
+      }
+    }
+  };
+
+  const calculateBalanceInRiyals = (balanceInEth) => {
+    const balanceInWei = ethers.utils.parseEther(balanceInEth);
+    const balanceInRiyals = balanceInWei.mul(ETHER_TO_RIYALS_RATE).toString();
+    setBalanceInRiyals(balanceInRiyals);
+  };
+
+  function formatNumber(number) {
+    const parts = number.toString().split(".");
+    parts[0] = parts[0].replace(/\B(?=(\d{2})+(?!\d))/g, ",");
+    return parts.join(".");
+  }
 
   const handleConnect = async () => {
     // Request access to the MetaMask wallet
@@ -36,9 +68,11 @@ export default function TradePage() {
   };
 
   const handleDisconnect = () => {
- 
-      Swal.fire("Info", "To disconnect, please click on the MetaMask extension and choose the 'Disconnect' option.", "info");
-    
+    Swal.fire(
+      "Info",
+      "To disconnect, please click on the MetaMask extension and choose the 'Disconnect' option.",
+      "info"
+    );
   };
 
   const handleSubmit = async (event) => {
@@ -97,21 +131,51 @@ export default function TradePage() {
       >
         <Box marginBottom={["2rem", 0]}>
           <div className="container main-wallet">
-            <div className="box d-flex justify-content-center">
-              <span className="title my-5">YOUR WALLET</span>
-              <div>
-                <strong>
-                  {connectedAddress
-                    ? `${connectedAddress.slice(
+            <div className="box d-flex ">
+              <span className="title mt-5 ">YOUR WALLET</span>
+              <div style={{marginBottom:'4rem'}}>
+                {connectedAddress ? (
+                  <>
+                  <Flex mb={'5rem'} alignItems="center">
+                      <p>Address Connected</p>
+                      <span className="dot" />
+                    </Flex>
+                    <strong>
+                      {`${connectedAddress.slice(
                         0,
                         6
-                      )}......${connectedAddress.slice(-9)}`
-                    : "Not connected"}
-                </strong>
-                <Flex alignItems="center">
-                  <p>Address Connected</p>
-                  {connectedAddress && <span className="dot" />}
-                </Flex>
+                      )}......${connectedAddress.slice(-9)}`}
+                    </strong>
+                    
+                    <p style={{fontSize:'1.2rem'}}>
+                      Balance:{" "}
+                      {accountBalance
+                        ? `${accountBalance.slice(0, 6)} ETH`
+                        : "Loading..."}
+                    </p>
+
+                    <div>
+                      <strong></strong>{" "}
+                      {accountBalance ? (
+                        <>
+                          <span style={{fontSize:'1.2rem'}}> 
+                            {" "}
+                            Balance in SAR :
+                            {" "}
+                            {balanceInRiyals 
+                              ? formatNumber(balanceInRiyals.slice(0, 4))
+                              : "Loading..."}
+                          </span>{" "}
+                          <span>SAR</span>
+                        </>
+                      ) : (
+                        "Loading..."
+                      )}
+                    </div>
+                  </>
+                ) : (
+                  <p>Not connected</p>
+                )}
               </div>
             </div>
           </div>
@@ -128,7 +192,7 @@ export default function TradePage() {
                   ml={5}
                   rightIcon={
                     <img
-                      srcset="https://img.icons8.com/?size=2x&amp;id=Oi106YG9IoLv&amp;format=png 2x, https://img.icons8.com/?size=1x&amp;id=Oi106YG9IoLv&amp;format=png 1x"
+                      srcSet="https://img.icons8.com/?size=2x&amp;id=Oi106YG9IoLv&amp;format=png 2x, https://img.icons8.com/?size=1x&amp;id=Oi106YG9IoLv&amp;format=png 1x"
                       src="https://img.icons8.com/?size=2x&amp;id=Oi106YG9IoLv&amp;format=png 2x"
                       alt="metamask icon"
                       width="30"
