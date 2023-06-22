@@ -97,7 +97,10 @@
 
   <p>The website is designed to be responsive, adapting to different screen sizes and devices.</p>
 <br>
-<img src='./public/images/8.png'>
+<p align="center">
+  <img width='250' src='./public/images/8.png' alt="Image" >
+</p>
+
 <hr>
   <h2 id="contributing">Contributing</h2>
 
