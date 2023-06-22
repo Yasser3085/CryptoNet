@@ -74,8 +74,12 @@
 
   <pre><code>npm run dev
   </code></pre>
+
+<span> or you can visit the website by this url https://cryptnet.netlify.app/ </span>
+
+
 <hr>
-  <h2 id="dependencies">Dependencies</h2>
+ <h2 id="dependencies">Dependencies</h2>
 
   <p>The project relies on the following dependencies:</p>
 
@@ -87,7 +91,6 @@
   </ul>
 
   <p>For detailed versions of the dependencies, please refer to the <code>package.json</code> file.</p>
-
 
 <hr>
   <h2 id="responsive">Responsive Design</h2>
