@@ -13,7 +13,9 @@
     <li><a href="#usage">Usage</a></li>
     <li><a href="#dependencies">Dependencies</a></li>
     <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#responsive">Responsive Design</a></li>
   </ul>
+  <hr>
 
   <h2 id="features">Features</h2>
 
@@ -42,7 +44,7 @@
     <br>
     <img src="./public/images/5.png">
   </ul>
-
+<hr>
   <h2 id="installation">Installation</h2>
 
   <ol>
@@ -72,7 +74,7 @@
 
   <pre><code>npm run dev
   </code></pre>
-
+<hr>
   <h2 id="dependencies">Dependencies</h2>
 
   <p>The project relies on the following dependencies:</p>
@@ -86,6 +88,14 @@
 
   <p>For detailed versions of the dependencies, please refer to the <code>package.json</code> file.</p>
 
+
+<hr>
+  <h2 id="responsive">Responsive Design</h2>
+
+  <p>The website is designed to be responsive, adapting to different screen sizes and devices.</p>
+<br>
+<img src='./public/images/8.png'>
+<hr>
   <h2 id="contributing">Contributing</h2>
 
   <p>Contributions to this project are welcome! If you encounter any issues or have suggestions for improvements, please open an issue or submit a pull request.</p>
