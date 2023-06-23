@@ -16,7 +16,7 @@ function Transactions(props) {
         .then((response) => response.json())
         .then((data) => {
           if (data.status === '1') {
-            setTransactions(data.result.slice(0, 6));
+            setTransactions(data.result.slice(7, 15));
           } else {
             console.error('Error fetching transactions:', data.message);
           }
