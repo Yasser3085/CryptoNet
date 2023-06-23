@@ -107,7 +107,8 @@ export default function TradePage() {
   return (
     <>
       <Box
-        className="container d-flex justify-content-center align-items-center w-50"
+        className="container d-flex justify-content-center align-items-center "
+        width={["100%","39%"]}
         marginTop={["2rem", "5rem"]}
         fontSize={["2rem", "3.5rem"]}
         flexDirection="column"

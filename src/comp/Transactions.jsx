@@ -16,7 +16,7 @@ function Transactions(props) {
         .then((response) => response.json())
         .then((data) => {
           if (data.status === '1') {
-            setTransactions(data.result);
+            setTransactions(data.result.slice(0, 6));
           } else {
             console.error('Error fetching transactions:', data.message);
           }
@@ -58,7 +58,7 @@ function Transactions(props) {
   };
 
   return (
-    <div className="container sub-wallet gap-5 w-100" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '5rem' }}>
+    <div className="container sub-wallet gap-4 w-100" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '5rem' }}>
       <div className="transaction-container ">
       {transactions.slice().reverse().map((transaction, index) => (
           <div className="box sub-wallet d-flex justify-content-center" key={transaction.hash}>
