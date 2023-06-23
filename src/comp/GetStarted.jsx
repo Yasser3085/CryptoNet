@@ -15,6 +15,8 @@ import "../App.css";
 
 import "@fontsource-variable/readex-pro";
 import "@fontsource/crete-round";
+import TradePage from "./TradePage";
+import Markets from "./markets";
 
 export default function GetStarted() {
   return (
@@ -23,7 +25,7 @@ export default function GetStarted() {
         flexDirection={["column"]}
         alignItems={["center"]}
         justifyContent="center"
-        h={["auto", "50rem"]}
+        h={"auto"}
         color="white"
         p={[8, 16]}
       >
@@ -83,13 +85,15 @@ export default function GetStarted() {
             <Box flex="1" mx="5" borderBottom="1px solid white" />
           </Flex>
 
-          <Stack
+          <Stack 
+          
             direction={["column", "row"]}
             spacing={[4, 16, 40]}
             alignItems="center"
             margin={["auto", "auto", "2rem"]}
+            marginTop={["2rem", "2rem", "6rem"]}
           >
-            <Box>
+            <Box >
               <Flex direction={"column"} justifyContent={"center"} alignItems={'center'}>
                 <Image
                   src="https://cdn-icons-png.flaticon.com/512/871/871645.png"
@@ -144,7 +148,11 @@ export default function GetStarted() {
         <Box flex={1} display={["none", "block"]} mx={[0, 16]}>
           <hr style={{ border: "none", borderBottom: "1px solid white" }} />
         </Box>
-      </Flex>
+   
+      </Flex> 
+      <TradePage />
+      <Markets />
+
     </>
   );
 }

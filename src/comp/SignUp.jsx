@@ -16,7 +16,7 @@ export default function SignUp() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:9000/register/user', {
+      const response = await axios.post('https://cryptonet-api.onrender.com/register/user', {
         username,
         email,
         password

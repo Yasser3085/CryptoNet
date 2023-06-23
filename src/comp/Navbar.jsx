@@ -199,7 +199,7 @@ export default function Navbar() {
                 <Button
                   colorScheme="yellow"
                   textColor={"black"}
-         rounded={['0px','full']}
+                  rounded={["0px", "full"]}
                   _hover={{ color: "black", transform: "scale(1.1)" }}
                   onClick={() => setShowSignupModal(true)}
                   className="nav-link"
@@ -267,6 +267,7 @@ export default function Navbar() {
                 _placeholder={{ color: "white", opacity: "0.5" }}
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
+                autoComplete="off"
               />
             </FormControl>
             <FormControl mt={4}>
